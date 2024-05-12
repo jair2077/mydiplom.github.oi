@@ -1,0 +1,1979 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+/* Reset styles */
+*, *:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    padding-top: 60px; /* Высота хедера */
+    padding-bottom: 60px; /* Высота футера, убедитесь что это достаточно для вашего футера */
+    margin: 0;
+    box-sizing: border-box; /* Включает padding в общий размер элемента */
+}
+
+/* Header styles */
+header {
+    
+    background-color: #f3a5f7; /* Светлый фон, как на картинке */
+    border-bottom: 1px solid #ccc; /* Граница снизу */
+    padding: 10px 5%; /* Отступы для шапки */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+.header-controls {
+    order: 1; /* Помещаем контролы (иконки) на первое место слева */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Выравниваем элементы влево */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Центрируем навигационные ссылки */
+    align-items: center;
+    padding: 0;
+    margin: 0 auto; /* Автоматические отступы для центрирования */
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+.phone-numbers {
+    order: 3; /* Помещаем телефонные номера на последнее место справа */
+    display: flex;
+    flex-direction: row; /* Выравниваем номера горизонтально */
+    align-items: center;
+    justify-content: flex-end; /* Выравниваем элементы вправо */
+}
+.header-bottom {
+    order: 2; /* Навигация в центре */
+    flex-grow: 1; /* Занимает все доступное пространство по ширине */
+}
+
+.phone-numbers a {
+    margin-right: 10px; /* Отступы между номерами телефонов */
+}
+
+.phone-numbers a:last-child, .header-controls a:last-child {
+    margin-right: 0;  
+}
+.phone-numbers {
+    display: flex;
+    flex-direction: row; /* Меняем направление на горизонтальное */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    margin-right: 20px; /* Отступ перед навигационным меню */
+}
+
+.phone-numbers a {
+    margin-right: 10px; /* Отступ между номерами телефонов */
+    margin-left: 0; /* Убираем левый отступ если он не нужен */
+}
+
+
+.header-controls img {
+    width: 25px;
+    height: 25px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%; /* Centering the nav items within the header */
+}
+
+header nav li {
+    margin-right: 20px;
+}
+
+header nav a {
+    color: black;
+    text-decoration: none;
+}
+
+.logo {
+    /* Центрирование логотипа */
+    flex: 1;
+    text-align: left;
+
+    font-weight: bold;
+    
+}
+.logo img {
+    width: 95px; /* Уменьшенный размер иконок */
+    height: 70px;
+}
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #fff;
+    gap: 8px;
+}
+
+.icon {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    position: relative; /* Убедитесь, что кнопка позиционирована относительно */
+}
+
+/* Убираем псевдоэлементы, которые могут быть добавлены */
+.icon::before, .icon::after {
+    content: none; /* Удаляет любые псевдоэлементы, которые могут быть добавлены */
+}
+
+
+
+/* Дополнительно убедитесь, что нет внешних стилей, влияющих на кнопку */
+.icon svg {
+    display: block; /* Убедитесь, что SVG отображается как блочный элемент */
+}
+
+.input {
+    border: none;
+    
+    outline: none;
+    color: black;
+    border-bottom: 2px solid white;
+    width: 100px;
+    transition: width 0.5s ease-in-out;
+}
+
+.input:focus, .icon:focus + .input {
+    width: 200px;
+}
+
+.input::placeholder {
+    color: #ccc;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+}
+
+.header-controls a, .header-controls .input-wrapper {
+    margin-left: 20px;
+}
+
+
+/* Footer styles */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Убедитесь, что высота футера указана правильно */
+    background-color: #f3a5f7;;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500; /* Увеличиваем z-index, чтобы футер был поверх всех элементов */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ограничиваем максимальную ширину контента внутри футера */
+}
+
+.footer-text {
+    flex-grow: 1; /* Позволяет тексту занимать все доступное пространство */
+    text-align: center; /* Центрируем текст */
+}
+
+.logo {
+    order: 2; /* Устанавливаем логотип после текста, независимо от порядка в HTML */
+    margin-left: 10px; /* Добавляем отступ слева от логотипа для визуального разделения */
+}
+
+.logo img {
+    width: 70px; /* Устанавливаем размеры логотипа */
+    height: auto; /* Сохраняем пропорции */
+}
+
+/* Адаптация хедера для мобильных устройств */
+@media (max-width: 768px) {
+    header {
+        padding: 5px 3%; /* Уменьшаем отступы в хедере */
+    }
+    .header-bottom {
+        display: none; /* Скрыть контейнер с навигацией и телефонными номерами */
+    }
+    .header-top {
+        flex-direction: column; /* Элементы в колонку для лучшей читаемости */
+        align-items: center; /* Центрирование элементов */
+    }
+    
+    .header-controls, .phone-numbers, nav ul {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-controls a, .phone-numbers a {
+        margin: 5px 0; /* Уменьшаем отступы между ссылками */
+    }
+
+    .input-wrapper {
+        margin-bottom: 10px; /* Отступ от поиска до иконок пользователя и корзины */
+    }
+
+    nav ul {
+        flex-wrap: wrap; /* Перенос элементов при нехватке места */
+    }
+
+    nav li {
+        width: 100%; /* Полная ширина для каждого элемента навигации */
+        margin: 5px 0; /* Меньше маржина между пунктами */
+    }
+
+    .logo img {
+        width: 50px; /* Уменьшаем логотип */
+        height: auto;
+    }
+
+    /* Дополнительный отступ сверху для всего тела, чтобы хедер не перекрывал контент */
+    body {
+        padding-top: 60px; /* Высота хедера + дополнительный отступ */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 300px; /* Размер должен быть равен или больше высоты хедера */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 70px; /* Можно уменьшить отступ для более маленьких экранов, если хедер меньше */
+    }
+}
+
+
+
+/* Адаптивные стили для планшетов и мобильных телефонов в альбомной ориентации */
+@media (max-width: 1024px) {
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    nav li {
+        margin: 5px;
+    }
+
+    .icon,
+    .input {
+        max-width: 250px; /* Ограничиваем максимальную ширину для улучшения внешнего вида */
+    }
+
+    .input-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-controls {
+        flex-direction: row; /* Для лучшего использования пространства */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+
+
+/*Slider*/
+
+.info {
+    position: absolute; /* или relative в зависимости от дизайна */
+    top: 60px; /* Примерное расположение, нужно корректировать */
+    right: 0;
+    z-index: 20; /* Выше слайдера и контента, но ниже header */
+    margin: 1rem;
+}
+  @import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+  *, *::before, *::after {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      border: 0;
+  }
+  html {
+      font-size: 10px;
+      font-size: calc(5px + 0.4vw);
+  }
+  body {
+      font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+      font-size: 1rem;
+      color: #000000;
+  }
+  a {
+    text-decoration: none;
+    color: rgba(225, 255, 255, .8);
+  }
+  /* Slider style */
+  .cd-slider {
+    margin-top: 60px; /* Высота header */
+    margin-bottom: 60px; /* Высота footer */
+    position: relative; /* Если необходимо, можно использовать absolute с заранее определенными top и bottom */
+    z-index: 10; /* Убедитесь, что слайдер находится выше основного контента и ниже header/footer */
+    height: calc(100vh - 120px); /* Вычитаем высоту header и footer из 100vh */
+    overflow: hidden;
+}
+  .cd-slider.ie9 nav div span {
+      display: none;
+  }
+  .cd-slider ul li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      transition: visibility 0s .6s;
+  }
+  
+  .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: 50% 100%;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      mix-blend-mode: lighten;
+      opacity: 0;
+      transform: scale(1.2);
+      transition: opacity .4s .6s, transform .4s .6s;
+  }
+  .content blockquote {
+      position: absolute;
+      bottom: 5%;
+      left: 4%;
+      z-index: 2;
+      max-width: 45%;
+  }
+  blockquote p {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+  }
+  blockquote span {
+      font-size: 1.4rem;
+  }
+  /* current slide
+  ---------------------------------*/
+  .cd-slider li.current_slide {
+      visibility: visible;
+  }
+  .cd-slider li.current_slide::before {
+      border-width: 16rem;
+  }
+  .cd-slider li.current_slide .content {
+      opacity: 1;
+      transform: scale(1);
+  }
+  /* nav
+  ---------------------------------*/
+  nav div {
+      position: absolute;
+      top: 50%;
+      left: 4%;
+      width: 5rem;
+      height: 5rem;
+      margin-top: -2.5rem;
+      list-style: none;
+  }
+  nav div:last-of-type {
+      left: auto;
+      right: 4%;
+  }
+  .prev, .next {
+      position: relative;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 100%;
+      transition: box-shadow .3s;
+  }
+  .prev::before, .prev::after, .next::before, .next::after {
+      content: '';
+      position: absolute;
+      left: 43%;
+      background: #000000;
+      width: .4rem;
+      min-width: 3px;
+      border-radius: 3px;
+      height: 34%;
+  }
+  .prev::before {
+      transform: rotate(45deg);
+      top: 24%;
+  }
+  .prev::after {
+      transform: rotate(-45deg);
+      bottom: 24%;
+  }
+  .next::before, .next::after {
+      left: auto;
+      right: 43%;
+  }
+  .next::before {
+      transform: rotate(-45deg);
+      top: 24%;
+  }
+  .next::after {
+      transform: rotate(45deg);
+      bottom: 24%;
+  }
+  .prev:hover, .next:hover {
+      box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.15);
+  }
+  nav > div > span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 100%;
+      z-index: 5;
+      pointer-events: none;
+      will-change: width, height;
+      transform: translate(-50%, -50%);
+      transition: width .6s, height .6s;
+  }
+
+  /* Адаптация слайдера */
+@media (max-width: 768px) {
+    .cd-slider {
+        height: calc(100vh - 120px); /* Адаптация высоты слайдера */
+        margin-top: 40px; /* Уменьшение отступа сверху для видимости */
+    }
+
+    .content {
+        background-size: cover; /* Обеспечиваем покрытие всего доступного пространства */
+    }
+
+    .content blockquote {
+        max-width: 80%; /* Увеличиваем ширину цитат для лучшего чтения */
+        font-size: 2rem; /* Уменьшаем размер шрифта цитат */
+    }
+
+    blockquote p {
+        font-size: 1.6rem; /* Дополнительное уменьшение размера шрифта для основного текста */
+    }
+
+    blockquote span {
+        font-size: 1.2rem; /* Уменьшение размера шрифта для подписей */
+    }
+}
+
+@media (max-width: 1024px) {
+    .cd-slider nav div {
+        width: 4rem; /* Уменьшаем размеры кнопок навигации */
+        height: 4rem;
+    }
+
+    .prev, .next {
+        border-radius: 50%; /* Улучшаем видимость кнопок на маленьких экранах */
+    }
+
+    .prev::before, .prev::after, .next::before, .next::after {
+        height: 25%; /* Корректируем размер стрелок внутри кнопок */
+    }
+}
+
+/* Адаптация подвала (footer) */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        padding: 10px;
+        height: auto; /* Позволяем подвалу расширяться вертикально */
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-text {
+        margin-top: 10px; /* Добавляем отступ сверху для текста */
+    }
+}
+
+/* Универсальные адаптации для всех элементов */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem; /* Уменьшаем базовый размер шрифта на мобильных устройствах */
+    }
+
+    .header-controls, .phone-numbers, nav ul {
+        flex-direction: column; /* Все основные элементы шапки теперь стекаются вертикально */
+    }
+}
+
+/* Стиль фона модального окна */
+/* Стиль для фона модального окна */
+.modal {
+    display: none; /* Изначально модальное окно не отображается */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Полупрозрачный фон */
+}
+
+/* Стиль для самого модального окна */
+.modal-content {
+    position: absolute;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Процент ширины можно подстроить под ваш дизайн */
+    max-width: 600px; /* Максимальная ширина окна */
+    
+    /* Позиционирование по центру */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Кнопка закрыть */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px; /* Больший размер для удобства использования */
+    color: #333;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+/* Сброс стилей */
+*, *:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff; /* Белый фон страницы */
+}
+
+/* Стилизация формы */
+form {
+    width: 450px;
+    min-height: 500px;
+    border-radius: 5px;
+    margin: 10% auto;
+    padding: 2%;
+    
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    position: relative; /* Чтобы position: fixed элементов не влиял на форму */
+}
+
+/* Контейнер для элементов формы */
+.con {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Элементы ввода и их контейнеры */
+.input-item {
+    background: #fff;
+    color: #333;
+    padding: 14.5px 0px 15px 9px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#eye {
+    background: #fff;
+    color: #333;
+    margin-left: -20px;
+    padding: 15px 9px 19px 0px;
+    border-radius: 0px 5px 5px 0px;
+    float: right;
+    position: relative;
+    right: 1%;
+    top: -0.2%;
+    z-index: 5;
+    cursor: pointer;
+}
+
+/* Основные стили инпутов */
+input.form-input {
+    width: 240px;
+    height: 50px;
+    margin-top: 2%;
+    padding: 15px;
+    font-size: 16px;
+    font-family: 'Abel', sans-serif; /* Используем специфичный шрифт */
+    color: #5E6472;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+
+input.form-input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+}
+
+/* Стили кнопок в форме */
+button.form-button {
+    display: inline-block;
+    color: #252537;
+    width: 280px;
+    height: 50px;
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    margin-top: 7%;
+}
+
+button.form-button:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+/* Специфический класс для кнопок внутри .other (контейнер других кнопок в форме) */
+.other .btn {
+    display: flex;
+    justify-content: center; /* Выравнивает кнопки по центру горизонтально */
+    align-items: center; /* Выравнивает кнопки по центру вертикально */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    gap: 10px; /* Добавляет пространство между кнопками */
+    margin-top: 20px; /* Дополнительный отступ сверху */
+}
+
+.other .btn:hover {
+    background-color: #f2f2f2;
+    opacity: 0.8;
+}
+
+.other .btn a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Стили для кнопок "Забыли пароль" и "Регистрация" */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    color: #252537;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.btn:hover {
+    background-color: #f2f2f2;
+    opacity: 0.8;
+}
+
+.btn a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Стилизация формы выхода, чтобы она не наследовала общие стили форм */
+.logout-form {
+    background: none; /* Удаление фона */
+    margin: 0; /* Убираем стандартные отступы */
+    padding: 0; /* Убираем стандартные отступы */
+    border: none; /* Убираем границы */
+    box-shadow: none; /* Убираем тени */
+}
+
+/* Уникальные стили для кнопки выхода */
+.unique-logout-button {
+    background-color: #f44336; /* Красный фон для кнопки */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase; /* Делаем текст заглавными буквами */
+    font-weight: bold; /* Утолщаем шрифт */
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Добавляем небольшую тень для эффекта возвышения */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: auto; /* Автоматическая ширина по содержимому */
+    display: block; /* Блочное отображение */
+    margin: 20px auto; /* Центрируем кнопку */
+}
+
+.unique-logout-button:hover {
+    background-color: #d32f2f; /* Темнее при наведении */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Увеличиваем тень при наведении */
+}
+
+.content-container {
+    width: 80%; /* или фиксированная ширина в пикселях, если требуется */
+    margin: 0 auto; /* Центрирование контейнера по горизонтали */
+    padding: 20px; /* Добавляем немного внутренних отступов */
+    text-align: center; /* Выравнивание текста по центру */
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    flex-direction: column; /* Расположение дочерних элементов в вертикальной колонке */
+    justify-content: center; /* Центрирование содержимого по вертикали */
+    align-items: center; /* Центрирование содержимого по горизонтали */
+    min-height: 100vh; /* Минимальная высота контейнера, чтобы он занимал всю видимую высоту */
+    box-sizing: border-box; /* Включаем border-box, чтобы padding не увеличивал размер блока */
+}
+
+.logout-form {
+    width: auto; /* Устанавливаем автоматическую ширину для формы */
+}
+
+.unique-logout-button {
+    width: 200px; /* Фиксированная ширина для кнопки */
+}
+
+/* Стили для кнопок Войти и Регистрация */
+/* Общие стили для кнопок форм */
+button.log-in {
+    width: calc(50% - 4px); /* Вычитаем небольшой отступ между кнопками */
+    margin: 10px 2px; /* Отступы вокруг для пространства */
+    padding: 12px; /* Подходящий внутренний отступ */
+    font-size: 16px; /* Читабельный размер шрифта */
+    color: #333; /* Цвет текста */
+    background-color: #f2f2f2; /* Цвет фона */
+    border: 1px solid #ccc; /* Граница для визуального выделения */
+    border-radius: 5px; /* Скругление углов для современного вида */
+    cursor: pointer; /* Курсор указывает на интерактивность */
+    outline: none; /* Убираем стандартный контур при фокусе */
+    transition: background-color 0.3s, transform 0.2s; /* Плавные переходы при наведении и клике */
+}
+
+button.log-in:hover {
+    background-color: #e0e0e0; /* Светлее при наведении */
+    transform: translateY(-2px); /* Небольшое поднятие кнопки */
+}
+
+button.log-in:active {
+    transform: translateY(1px); /* Эффект нажатия */
+}
+
+/* Родительский контейнер для кнопок, если кнопки не выравниваются */
+.other {
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    justify-content: space-between; /* Распределение элементов с равными отступами */
+    flex-wrap: wrap; /* Перенос на новую строку при необходимости */
+}
+
+.field-set {
+    display: flex; /* Для выравнивания элементов внутри */
+    flex-wrap: wrap; /* Обеспечиваем перенос элементов */
+    justify-content: space-between; /* Распределение с промежутком */
+}
+
+
+/* Стилизация формы */
+form {
+    display: flex; /* Используем flexbox для выравнивания */
+    flex-direction: column; /* Стекаем элементы вертикально */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    justify-content: center; /* Центрируем элементы по вертикали */
+    width: 450px;
+    min-height: 500px;
+    margin: 10% auto; /* Авто-маржины для горизонтального центрирования */
+    padding: 2%;
+    
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+}
+
+/* Контейнер для элементов формы */
+.con {
+    width: 100%; /* Занимает всю ширину формы */
+    display: flex;
+    flex-direction: column; /* Элементы в колонке */
+    align-items: center; /* Центрирование элементов внутри контейнера */
+}
+
+.input-item, input.form-input, .btn {
+    width: 80%; /* Установка ширины элементов, чтобы они были одинаковыми */
+    margin: 8px 0; /* Добавляем вертикальный отступ */
+}
+
+.field-set, .other {
+    width: 100%; /* Полная ширина для выравнивания внутренних элементов */
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание элементов */
+    align-items: center; /* Центрирование по горизонтали */
+}
+
+/* Переопределение стилей для кнопок, чтобы подстроить под новые правила */
+button.log-in, .btn {
+    width: 80%; /* Соответствие ширине инпутов */
+    margin: 8px 0; /* Одинаковый вертикальный отступ для всех элементов */
+}
+
+/* Стилизация страницы личного кабинета */
+.content-container {
+    background-color: #f9f9f9; /* Светлый фон для контентного блока */
+    border: 1px solid #ddd; /* Рамка для контента */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 20px; /* Внутренние отступы */
+    margin-top: 100px; /* Отступ сверху, чтобы не перекрывалось с хедером */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Тень для элемента */
+    width: auto; /* Автоматическая ширина */
+    max-width: 600px; /* Максимальная ширина */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Улучшение стилей для заголовка */
+h1 {
+    color: #333; /* Цвет текста */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+/* Улучшение стилей для текста */
+p {
+    font-size: 16px;
+    color: black; /* Серый цвет текста для большей читабельности */
+    margin-bottom: 5px; /* Отступы между абзацами */
+}
+
+/* Стили для кнопки выхода */
+.logout-button {
+    padding: 10px 20px;
+    background-color: #f44336; /* Красный цвет для кнопки выхода */
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; /* Темнее при наведении */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 767px) {
+    form {
+        width: 90%; /* Уменьшаем ширину формы для мобильных устройств */
+        min-height: auto; /* Удаляем минимальную высоту формы */
+    }
+
+    .input-item, input.form-input, .btn {
+        width: 100%; /* Устанавливаем ширину элементов на 100% для мобильных устройств */
+    }
+}
+
+/* Медиа-запрос для планшетов */
+@media (min-width: 768px) and (max-width: 1023px) {
+    form {
+        width: 70%; /* Уменьшаем ширину формы для планшетов */
+    }
+}
+
+/* Медиа-запрос для ноутбуков */
+@media (min-width: 1024px) {
+    form {
+        width: 450px; /* Возвращаем исходную ширину формы для ноутбуков */
+    }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .content-container {
+        padding: 15px;
+        margin-top: 150px; /* Больший отступ сверху для мобильных устройств */
+    }
+}
+
+.user-profile {
+    display: flex;
+    margin-top: 20px;
+}
+
+.sidebar {
+    flex: 1;
+    background: #f5f5f5;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.sidebar a.active {
+    background-color: #ddd;
+}
+
+.profile-content {
+    flex: 3;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-content h1 {
+    color: #333;
+}
+
+.profile-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-content form label {
+    margin-top: 10px;
+}
+
+.profile-content form input[type="email"],
+.profile-content form input[type="text"] {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+}
+
+.profile-content form button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-content form button:hover {
+    opacity: 0.8;
+}
+
+
+.save-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: block; /* Для корректного отображения в блочном контексте */
+    width: auto; /* Чтобы кнопка растягивалась по содержимому */
+    text-decoration: none; /* Убираем подчеркивание для ссылки */
+    border-radius: 5px; /* Скругляем углы */
+}
+
+.save-button:hover {
+    opacity: 0.8; /* Небольшое затемнение при наведении */
+}
+
+
+.catalog-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Уменьшить количество, если нужно больше места между элементами */
+    gap: 20px; /* Увеличить зазор между элементами */
+    padding: 20px 50px; /* Увеличить боковые отступы */
+    margin: 20px auto; /* Добавить верхний и нижний отступы для большего пространства */
+    max-width: 1200px; /* Ограничить максимальную ширину контейнера */
+}
+
+.catalog-item img {
+    width: 100%; /* Ширина изображения адаптивно под размер элемента */
+    height: auto; /* Высота автоматически подстраивается под пропорции */
+    object-fit: cover; /* Обеспечивает сохранение пропорций без искажений */
+}
+
+.catalog-item {
+    text-align: center;
+    padding: 10px; /* Внутренние отступы для текста и изображения */
+    border: 1px solid #ccc; /* Граница вокруг элементов для визуального отделения */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Тень для добавления глубины */
+}
+
+
+.catalog-item p {
+    font-size: 14px;
+    color: #333;
+}
+
+@media (max-width: 1024px) {
+    .catalog-container {
+        grid-template-columns: repeat(2, 1fr); /* Меньше элементов в ряду на планшетах */
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-container {
+        grid-template-columns: 1fr; /* Один элемент в ряду на мобильных устройствах */
+        padding: 15px 30px;
+    }
+}
+
+.new-arrivals {
+    padding: 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.new-arrivals-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.new-arrival-item {
+    width: 240px; /* Адаптируйте ширину в соответствии с вашим дизайном */
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: left;
+}
+
+.new-arrival-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.item-info p {
+    margin: 5px 0;
+}
+
+.item-info p:nth-child(1) {
+    font-weight: bold;
+}
+
+.item-info p:nth-child(3) {
+    color: red;
+    font-weight: bold;
+}
+
+.about-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #ccc;
+}
+
+.about-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-text {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-link {
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-link:hover {
+    text-decoration: underline;
+}
+
+.about-section .additional-info {
+    display: none; /* Скрыть блок по умолчанию */
+    margin-top: 20px; /* Добавить отступ сверху */
+}
+
+/* Стили для кнопки */
+.toggle-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.toggle-button:hover {
+    background-color: #45a049;
+}
+
+.admin-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #007BFF; /* Синий цвет фона */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.2s;
+}
+
+.admin-link:hover, .admin-link:focus {
+    background-color: #0056b3; /* Темнее при наведении */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для эффекта нажатия */
+}
+
+.admin-link:active {
+    background-color: #004085; /* Еще темнее при активации */
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.3); /* Внутренняя тень для эффекта нажатия */
+}
+
+.admin-button {
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    color: white;
+    background-color: #007BFF;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.admin-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.admin-button.delete {
+    background-color: #dc3545;
+}
+
+.admin-button.delete:hover {
+    background-color: #c82333;
+}
+
+.admin-button.edit {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.admin-button.edit:hover {
+    background-color: #e0a800;
+}
+
+
+/* Общие стили для административной панели */
+.admin-panel, .content-management {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 20px;
+    max-width: 800px;
+}
+
+/* Стилизация заголовков внутри админ-панели */
+.admin-panel h1, .content-management h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Стилизация форм и их контейнеров */
+.form-container {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.form-container h2 {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Стилизация полей ввода и кнопок */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    
+    box-sizing: border-box; /* Учитывает padding и border в ширине элемента */
+}
+
+textarea {
+    min-height: 100px; /* Достаточное пространство для описания */
+}
+
+button.admin-button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #4CAF50; /* Зеленый цвет кнопки */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.admin-button:hover {
+    background-color: #45a049; /* Немного темнее при наведении */
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 767px) {
+    .user-profile {
+        flex-direction: column; /* Столбцы для мобильных устройств */
+    }
+
+    .sidebar, .profile-content {
+        flex: 1; /* Оба элемента равномерно занимают доступное пространство */
+        width: 100%; /* Ширина на всю ширину экрана */
+        margin: 0; /* Убираем отступы */
+    }
+
+    .profile-content {
+        order: -1; /* Помещаем блок содержимого выше, чем сайдбар */
+    }
+
+    .sidebar {
+        order: 1; /* Помещаем сайдбар ниже блока содержимого */
+        margin-top: 20px; /* Отступ сверху */
+    }
+
+    .sidebar a {
+        border-bottom: none; /* Убираем границу между ссылками */
+    }
+
+    .profile-content form input[type="email"],
+    .profile-content form input[type="text"] {
+        width: 100%; /* Ширина инпутов на всю доступную ширину */
+    }
+}
+
+/* Медиа-запрос для планшетов */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .profile-content form input[type="email"],
+    .profile-content form input[type="text"] {
+        width: 300px; /* Возвращаем обычную ширину инпутов для планшетов */
+    }
+}
+
+/* Медиа-запрос для ноутбуков */
+@media (min-width: 1024px) {
+    /* Можно добавить дополнительные стили для разрешений ноутбуков */
+}
+
+/* Респонсивность */
+@media (max-width: 768px) {
+    .admin-panel, .content-management {
+        margin: 10px;
+        padding: 10px;
+    }
+}
+
+/* Стилизация таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f3f3f3;
+}
+.admin-button {
+    padding: 8px 16px;
+    margin-right: 5px;
+    background-color: #4CAF50; /* Зеленый цвет */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-button:hover {
+    background-color: #45a049; /* Немного темнее зеленый при наведении */
+}
+
+.delete-button {
+    padding: 8px 16px;
+    background-color: #f44336; /* Красный цвет */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #da190b; /* Немного темнее красный при наведении */
+}
+
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.product-card {
+    margin: 8px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 23%; /* Вы можете настроить ширину в зависимости от вашего дизайна */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 16px;
+    text-align: center; /* Центрирование текста внутри карточки */
+}
+
+.product-card img {
+    width: 100%; /* Растягивание изображения на всю ширину карточки */
+    height: auto; /* Сохранение пропорций изображения */
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.product-card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.product-card button:hover {
+    opacity: 0.7;
+}
+
+* Page-specific styles */
+.container {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.product-title, .section-title, .about-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product-image, .product-price, .product-description, .about-text {
+    width: 200px; /* фиксированная ширина */
+    height: auto; /* сохраняет пропорции изображения */
+    display: block;
+    margin: 0 auto; /* центрирование изображения */
+    margin-bottom: 20px; /* отступ снизу */
+}
+
+.product-price {
+    font-size: 20px;
+    color: #4CAF50;
+}
+
+.product-description, .about-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Interactive elements styles */
+.back-link, .button, .admin-link, .admin-button, .save-button, .logout-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.back-link:hover, .button:hover, .admin-link:hover, .admin-button:hover, .save-button:hover, .logout-button:hover {
+    background-color: #0056b3;
+}
+
+/* Additional responsive and positioning styles */
+@media (max-width: 768px) {
+    body, .container {
+        padding-top: 60px;
+        width: 95%;
+        padding: 10px;
+    }
+
+    header, .header-top, .header-controls, .phone-numbers, nav ul {
+        flex-direction: column;
+    }
+
+    .header-controls a, .phone-numbers a {
+        margin: 5px 0;
+    }
+}
+
+/* Стили для контейнера карточки товара */
+.new-arrival-item {
+    width: 240px; /* или другая ширина, подходящая под ваш дизайн */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Добавление анимации */
+    text-align: center;
+    cursor: pointer; /* Подсказка, что элемент интерактивный */
+}
+
+/* Стили для изображения внутри карточки */
+.new-arrival-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Стили для текста в карточке */
+.new-arrival-item p {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Стили для заголовка в карточке */
+.new-arrival-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Стили для цены в карточке */
+.new-arrival-item .price {
+    font-size: 20px;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Эффект наведения */
+.new-arrival-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Отступы между карточками */
+.new-arrivals-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Отступы между карточками */
+    justify-content: center; /* Центрирование карточек */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .new-arrival-item {
+        width: 100%; /* Карточки занимают всю доступную ширину */
+    }
+}
+
+/* Основные стили страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-title {
+    font-size: 24px;
+    color: #333;
+    margin-top: 0;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.product-price {
+    font-size: 22px;
+    color: #4CAF50;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.product-description {
+    text-align: left;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.back-link {
+    display: inline-block;
+    background-color: #5a88ca;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #457ab6;
+}
+
+/* Медиа запросы для адаптивного дизайна */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .product-title {
+        font-size: 20px;
+    }
+
+    .product-price {
+        font-size: 20px;
+    }
+
+    .product-description {
+        font-size: 14px;
+    }
+}
+
+/* Дополнительные эффекты и анимации */
+.button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    opacity: 0.85;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.about-section {
+    width: 100%; /* занимает всю ширину родительского элемента */
+    max-width: 1200px; /* максимальная ширина */
+    margin: 40px auto; /* центрирование и добавление верхнего и нижнего отступов */
+    padding: 20px; /* внутренние отступы */
+    text-align: center; /* текст по центру */
+}
+
+.about-text {
+    font-size: 16px; /* размер шрифта */
+    color: #666; /* цвет текста */
+    line-height: 1.6; /* межстрочный интервал */
+    margin-bottom: 20px; /* отступ снизу */
+    width: 90%; /* ширина текста относительно его контейнера */
+    margin: 0 auto; /* автоматические отступы для центрирования */
+}
+@media (max-width: 768px) {
+    .about-text {
+        width: 100%; /* на маленьких экранах пусть текст занимает всю доступную ширину */
+        font-size: 14px; /* уменьшаем шрифт для лучшей читаемости на мобильных устройствах */
+    }
+}
+
+/* Индивидуальные стили для страницы product_addition.php */
+
+/* Стили для заголовков категорий */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Стили для карточек товаров */
+.new-arrival-item {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.new-arrival-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.item-info {
+    text-align: center;
+}
+
+.item-info p {
+    margin: 5px 0;
+}
+
+.button {
+    display: block;
+    text-align: center;
+    padding: 5px 10px;
+    margin-top: 10px;
+    background-color: #f3a5f7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Individual styles for filters */
+.filters-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    column-count: 3; /* Устанавливаем количество колонок */
+}
+
+.filters-container h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+    width: 100%;
+}
+
+.filters-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Убираем внешние отступы у списка */
+}
+
+.filters-container li {
+    margin-bottom: 5px;
+}
+
+.filters-container input[type="checkbox"] {
+    margin-right: 5px;
+}
+.apply-filters-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.apply-filters-button:hover {
+    background-color: #0056b3;
+}
+/* Стили для чекбоксов */
+.filter-list input[type='checkbox'] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.filter-list label {
+    cursor: pointer;
+}
+/* Уникальные стили для формы фильтров */
+.filters-form {
+    margin: 0;
+    padding: 0;
+}
+
+.filters-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filters-form input[type='checkbox'] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+#searchResults {
+    position: absolute;
+    top: calc(100% + 10px); /* Отступ от нижнего края поля поиска */
+    left: 0;
+    width: 300px; /* Увеличение ширины окна результатов */
+    max-height: 400px; /* Увеличение максимальной высоты окна */
+    overflow-y: auto; /* Добавление полосы прокрутки, если результатов слишком много */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Установка z-index для отображения окна над остальным контентом */
+}
+
+
+#searchResults img {
+    width: 50px; /* Размер изображения товара */
+    height: auto; /* Автоматический расчет высоты */
+    margin-right: 10px;
+}
+
+#searchResults .result-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#searchResults .result-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 767px) {
+    /* Стили для таблицы на мобильных устройствах */
+    table {
+        font-size: 14px; /* Уменьшаем размер шрифта для лучшей читаемости */
+    }
+
+    table th, table td {
+        padding: 6px; /* Уменьшаем отступы ячеек */
+    }
+}
+
+/* Медиа-запрос для планшетов */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Дополнительные стили для планшетов, если необходимо */
+}
+
+/* Медиа-запрос для ноутбуков */
+@media (min-width: 1024px) {
+    /* Дополнительные стили для ноутбуков, если необходимо */
+}
+
+@media (max-width: 767px) {
+    .profile-content {
+        padding: 20px;
+    }
+
+    .profile-content h1 {
+        font-size: 24px;
+    }
+
+    .profile-content form {
+        width: 100%;
+    }
+
+    .profile-content label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .profile-content input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    .profile-content .save-button {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Медиа-запрос для планшетов */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .profile-content {
+        padding: 30px;
+    }
+
+    .profile-content h1 {
+        font-size: 28px;
+    }
+}
+
+/* Медиа-запрос для ноутбуков и более крупных экранов */
+@media (min-width: 1024px) {
+    .profile-content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+ /* Стили для кнопки toggleHeaderButton */
+/* Стили для кнопки */
+.toggle-header-button {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+}
+/* Стили для скрытия хедера */
+header.header-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Показывать кнопку только на мобильных устройствах с шириной экрана не более 425px */
+@media only screen and (max-width: 425px) {
+    .toggle-header-button {
+        display: block;
+    }
+}
+
+
